@@ -1,0 +1,33 @@
+{
+  "buildFiles": [
+    "C:\\Users\\bonet\\Desktop\\Android_camera\\ServiceCamera\\app\\src\\main\\jni\\Android.mk",
+    "C:\\Users\\bonet\\Desktop\\Android_camera\\ServiceCamera\\app\\src\\main\\jni\\Application.mk"
+  ],
+  "cleanCommands": [
+    "C:\\Users\\bonet\\AppData\\Local\\Android\\Sdk\\ndk-bundle\\ndk-build.cmd NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003dC:\\Users\\bonet\\Desktop\\Android_camera\\ServiceCamera\\app\\src\\main\\jni\\Android.mk NDK_APPLICATION_MK\u003dC:\\Users\\bonet\\Desktop\\Android_camera\\ServiceCamera\\app\\src\\main\\jni\\Application.mk APP_ABI\u003darmeabi-v7a NDK_ALL_ABIS\u003darmeabi-v7a NDK_DEBUG\u003d1 APP_PLATFORM\u003dandroid-16 NDK_OUT\u003dC:/Users/bonet/Desktop/Android_camera/ServiceCamera/app/build/intermediates/ndkBuild/debug/obj NDK_LIBS_OUT\u003dC:\\Users\\bonet\\Desktop\\Android_camera\\ServiceCamera\\app\\build\\intermediates\\ndkBuild\\debug\\lib clean"
+  ],
+  "libraries": {
+    "detection_based_tracker-debug-armeabi-v7a": {
+      "buildCommand": "C:\\Users\\bonet\\AppData\\Local\\Android\\Sdk\\ndk-bundle\\ndk-build.cmd NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003dC:\\Users\\bonet\\Desktop\\Android_camera\\ServiceCamera\\app\\src\\main\\jni\\Android.mk NDK_APPLICATION_MK\u003dC:\\Users\\bonet\\Desktop\\Android_camera\\ServiceCamera\\app\\src\\main\\jni\\Application.mk APP_ABI\u003darmeabi-v7a NDK_ALL_ABIS\u003darmeabi-v7a NDK_DEBUG\u003d1 APP_PLATFORM\u003dandroid-16 NDK_OUT\u003dC:/Users/bonet/Desktop/Android_camera/ServiceCamera/app/build/intermediates/ndkBuild/debug/obj NDK_LIBS_OUT\u003dC:\\Users\\bonet\\Desktop\\Android_camera\\ServiceCamera\\app\\build\\intermediates\\ndkBuild\\debug\\lib C:/Users/bonet/Desktop/Android_camera/ServiceCamera/app/build/intermediates/ndkBuild/debug/obj/local/armeabi-v7a/libdetection_based_tracker.so",
+      "toolchain": "toolchain-armeabi-v7a",
+      "abi": "armeabi-v7a",
+      "artifactName": "detection_based_tracker",
+      "files": [
+        {
+          "src": "C:\\Users\\bonet\\Desktop\\Android_camera\\ServiceCamera\\app\\src\\main\\jni\\DetectionBasedTracker_jni.cpp",
+          "flags": "\"-gcc-toolchain\" \"C:/Users/bonet/AppData/Local/Android/sdk/ndk-bundle/build//../toolchains/arm-linux-androideabi-4.9/prebuilt/windows-x86_64\" \"-fpic\" \"-ffunction-sections\" \"-funwind-tables\" \"-fstack-protector-strong\" \"-Wno-invalid-command-line-argument\" \"-Wno-unused-command-line-argument\" \"-no-canonical-prefixes\" \"-fno-integrated-as\" \"-g\" \"-target\" \"armv7-none-linux-androideabi\" \"-march\u003darmv7-a\" \"-mfloat-abi\u003dsoftfp\" \"-mfpu\u003dvfpv3-d16\" \"-fno-exceptions\" \"-fno-rtti\" \"-mthumb\" \"-O0\" \"-UNDEBUG\" \"-fno-limit-debug-info\" \"-IC:/Users/bonet/Desktop/Android_camera/OpenCV-android-sdk/sdk/native/jni/include/opencv\" \"-IC:/Users/bonet/Desktop/Android_camera/OpenCV-android-sdk/sdk/native/jni/include\" \"-IC:/Users/bonet/Desktop/Android_camera/ServiceCamera/app/src/main/jni\" \"-IC:/Users/bonet/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\" \"-IC:/Users/bonet/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include\" \"-IC:/Users/bonet/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include/backward\" \"-IC:/Users/bonet/Desktop/Android_camera/ServiceCamera/app/src/main/jni\" \"-DANDROID\" \"-fPIC\" \"-DANDROID\" \"-fsigned-char\" \"-Wa,--noexecstack\" \"-Wformat\" \"-Werror\u003dformat-security\" \"-frtti\" \"-fexceptions\" \"-isystem\" \"C:/Users/bonet/AppData/Local/Android/sdk/ndk-bundle/build//../platforms/android-16/arch-arm/usr/include\""
+        }
+      ],
+      "output": "C:\\Users\\bonet\\Desktop\\Android_camera\\ServiceCamera\\app\\build\\intermediates\\ndkBuild\\debug\\obj\\local\\armeabi-v7a\\libdetection_based_tracker.so"
+    }
+  },
+  "toolchains": {
+    "toolchain-armeabi-v7a": {
+      "cppCompilerExecutable": "C:\\Users\\bonet\\AppData\\Local\\Android\\sdk\\ndk-bundle\\build\\..\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

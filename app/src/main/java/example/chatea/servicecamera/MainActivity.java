@@ -35,6 +35,27 @@ public class MainActivity extends Activity {
         });
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        if (mRecording) {
+            showNotification();
+        }
+    }
+
+    private void showNotification() {
+
+        ResultReceiver receiver = new ResultReceiver(new Handler()) {
+            @Override
+            protected void onReceiveResult(int resultCode, Bundle resultData) {
+                handleStartRecordingResult(resultCode, resultData);
+            }
+        };
+
+        CameraService.startToNotification(this, receiver);
+    }
+
     private void startRecording() {
         setRecording(true);
 
@@ -83,9 +104,10 @@ public class MainActivity extends Activity {
 
     private void handleStopRecordingResult(int resultCode, Bundle resultData) {
         if (resultCode == CameraService.RECORD_RESULT_OK) {
-            String videoPath = resultData.getString(CameraService.VIDEO_PATH);
+            /*String videoPath = resultData.getString(CameraService.VIDEO_PATH);
             Toast.makeText(this, "Record succeed, file saved in " + videoPath,
-                    Toast.LENGTH_LONG).show();
+                    Toast.LENGTH_LONG).show();*/
+            Toast.makeText(this, "Record succeed", Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(this, "Record failed...", Toast.LENGTH_SHORT).show();
         }

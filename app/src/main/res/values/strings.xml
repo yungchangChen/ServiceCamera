@@ -6,4 +6,5 @@
 
     <string name="start_recording">Start Recording</string>
     <string name="stop_recording">Stop Recording</string>
+    <string name="recording">Camera Recording~</string>
 </resources>
