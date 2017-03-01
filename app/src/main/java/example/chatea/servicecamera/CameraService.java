@@ -94,6 +94,7 @@ public class CameraService extends Service implements CvCameraViewListener2 {
     private int                    mAbsoluteFaceSize   = 0;
 
     private CameraBridgeViewBase   mOpenCvCameraView;
+    GestureUtil gesutil = new GestureUtil();
     // end of FD
 
     public CameraService() {
@@ -119,9 +120,11 @@ public class CameraService extends Service implements CvCameraViewListener2 {
 
                     try {
                         // load cascade file from application resources
-                        InputStream is = getResources().openRawResource(R.raw.lbpcascade_frontalface);
+                        //InputStream is = getResources().openRawResource(R.raw.lbpcascade_frontalface);
+                        InputStream is = getResources().openRawResource(R.raw.cascade);
                         File cascadeDir = getDir("cascade", Context.MODE_PRIVATE);
-                        mCascadeFile = new File(cascadeDir, "lbpcascade_frontalface.xml");
+                        //mCascadeFile = new File(cascadeDir, "lbpcascade_frontalface.xml");
+                        mCascadeFile = new File(cascadeDir, "cascade.xml");
                         FileOutputStream os = new FileOutputStream(mCascadeFile);
 
                         byte[] buffer = new byte[4096];
@@ -203,7 +206,27 @@ public class CameraService extends Service implements CvCameraViewListener2 {
         for (int i = 0; i < facesArray.length; i++)
             Imgproc.rectangle(mRgba, facesArray[i].tl(), facesArray[i].br(), FACE_RECT_COLOR, 3);
 
+        if(facesArray.length == 1)
+        {
+            gesutil.checkRect(facesArray[0]);
+            getMouseState();
+        } else if (facesArray.length == 0)
+        {
+            gesutil.checkPassFrame();
+        }
+
         return mRgba;
+    }
+
+    public void getMouseState()
+    {
+        if(gesutil.isMoveRight())
+        {   // send Right event
+            Log.e(TAG, "Mouse: Send Right event");
+        } else if (gesutil.isMoveLeft()){
+            // send LEFT event
+            Log.e(TAG, "Mouse: Send Left event");
+        }
     }
 
     private void setMinFaceSize(float faceSize) {
